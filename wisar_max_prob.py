@@ -49,10 +49,10 @@ prob_snaps = []
 covered_nodes = [prev_pos]
 
 
-f = open('results/' + fn + '_max_prob_path.csv','w')
-f.write("x,y")
-f.write("\n")
-f.write("0,0")
+f = open('results/' + fn + '_max_prob_path.txt','w')
+# f.write("x,y")
+# f.write("\n")
+f.write("0 0")
 f.write("\n")
 
 
@@ -85,7 +85,7 @@ while not len(covered_nodes) == (len(non_zero_nodes)+1):
     probs = np.delete(probs, index, axis = 0)
     nodes = np.delete(nodes, index, axis = 0)
     covered_nodes.append(next_pos)
-    st = str(next_pos[0]) + "," + str(next_pos[1])
+    st = str(next_pos[0]) + " " + str(next_pos[1])
     f.write(st)
     f.write("\n")
 

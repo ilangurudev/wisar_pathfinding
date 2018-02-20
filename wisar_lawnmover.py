@@ -43,10 +43,10 @@ prob_snaps = []
 covered_nodes = [prev_pos]
 
 # with open(,'wb') as file:
-f = open('results/' + fn + '_lawnmower_path.csv','w')
-f.write("x,y")
-f.write("\n")
-f.write("0,0")
+f = open('results/' + fn + '_lawnmower_path.txt','w')
+# f.write("x,y")
+# f.write("\n")
+f.write("0 0")
 f.write("\n")
 
 for x in non_zero_cols:
@@ -61,7 +61,7 @@ for x in non_zero_cols:
         prob_snaps.append(total_probability)
         prev_pos = new_pos
         covered_nodes.append(new_pos)
-        st = str(x) + "," + str(y)
+        st = str(x) + " " + str(y)
         f.write(st)
         f.write("\n")
 
